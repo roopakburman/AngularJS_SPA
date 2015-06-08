@@ -1,0 +1,10 @@
+
+<div ng-controller ="View1Ctrl as thisView">
+{{something}}
+
+<ul>
+	<li ng-repeat = "item in thisView.items" class="text-primary">
+		{{item.name}} - {{item.id}}
+	</li>
+</ul>
+</div>
