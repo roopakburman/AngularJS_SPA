@@ -28,7 +28,7 @@ $scope.something = 'hey there!';
 } */
 /*With this keyword*/
 function View1Func() {
-this.something = 'hey there!';
+
  this.items = [{
     name: 'Scuba Diving Kit',
     id: 7297510
