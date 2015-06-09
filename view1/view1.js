@@ -28,10 +28,16 @@ $scope.something = 'hey there!';
 } */
 /*With this keyword*/
 function View1Func() {
-  this.removeFromStock = function(item, index){
-	  this.items.splice(index,1);
+	var vm = this;
+  vm.removeFromStock = function(item, index){
+	  vm.items.splice(index,1);
   };
-	this.items = [{
+  vm.showMessage = function(msg){
+	  alert(msg);
+	  console.log(msg);
+  };
+  
+  vm.items = [{
     name: 'Scuba Diving Kit',
     id: 7297510
   },{

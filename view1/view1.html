@@ -1,11 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="text-danger" ng-controller ="View1Ctrl as thisView">
+			<div>
+			{{thisView.items.length}} in stock!
+			</div>
+			<div>
+				<ul>
+				  <li ng-repeat="item in thisView.items" ng-click="thisView.removeFromStock(item, $index)">
+					  Name: {{item.name}}; ID: {{item.id}}
+				  </li>
+				</ul>
+			</div>
+			<div>
+				<input type="text" ng-model="thisView.message" />
+				<p>Message: {{thisView.message }}</p>
+			</div>
+			<div>
+				<input type="text" ng-model="thisView.message" />
+				<!-- <a href= ""ng-click="thisView.showMessage(thisView.message);""">Show my message</a> -->
+				<a ng-href = ""ng-click="thisView.showMessage(thisView.message);""">My Message!</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="navbar navbar-default">
+		<a href=""ng-click="showMenu =!showMenu""">Toggle menu!</a>
+		<ul ng-show="showMenu">
+		  <li>1</li>
+		  <li>2</li>
+		  <li>3</li>
+		</ul>
 
-<div class="text-danger" ng-controller ="View1Ctrl as thisView">
-<div>
-{{thisView.items.length}} in stock!
-</div>
-<ul>
-      <li ng-repeat="item in thisView.items" ng-click="thisView.removeFromStock(item, $index)">
-          {{ item.name }}
-      </li>
-  </ul>
+		</div>
+
+	</div>
 </div>
