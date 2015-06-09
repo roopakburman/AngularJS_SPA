@@ -1,10 +1,11 @@
 
-<div ng-controller ="View1Ctrl as thisView">
-{{something}}
-
+<div class="text-danger" ng-controller ="View1Ctrl as thisView">
+<div>
+{{thisView.items.length}} in stock!
+</div>
 <ul>
-	<li ng-repeat = "item in thisView.items" class="text-danger">
-		{{item.name}} - {{item.id}}
-	</li>
-</ul>
+      <li ng-repeat="item in thisView.items" ng-click="thisView.removeFromStock(item, $index)">
+          {{ item.name }}
+      </li>
+  </ul>
 </div>

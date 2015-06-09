@@ -28,8 +28,10 @@ $scope.something = 'hey there!';
 } */
 /*With this keyword*/
 function View1Func() {
-
- this.items = [{
+  this.removeFromStock = function(item, index){
+	  this.items.splice(index,1);
+  };
+	this.items = [{
     name: 'Scuba Diving Kit',
     id: 7297510
   },{
@@ -42,4 +44,21 @@ function View1Func() {
     name: 'Beach Towel',
     id: 1000983
   }];
+  }
+/* 
+function myFirstService() {
+	this.sayHello = function(name){
+		return 'Hello there' + name;
+	};
+	
 }
+
+function View1Ctrl (myFirstService){
+	this.sayHello = function(name){
+		myFirstService.sayHello(name);
+	}
+}
+
+angular
+.module('myApp')
+.service('myFirstService', myFirstService); */
