@@ -24,17 +24,16 @@
 		</p>
 	</div>
 </div>
-<div class="container">
+<div class="container" id="result">
 	<div class="row">
-				<div>
+				Check here
 				<ul>
-				  <li ng-repeat="item in thisView.newPost">
+				  <li ng-repeat="item in thisView.objContact">
 					  Name: {{item.Name}} - Email: {{item.Email}} - Phone: {{item.Phone}} - School: {{item.School}}
 					  <!-- Name: <p ng-bind = "item.name"></p> -->
 				  </li>
 				</ul>
-			</div>
-
 	</div>
+
 	<div id='messagesDiv'></div>
 </div>

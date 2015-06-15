@@ -29,14 +29,12 @@ function fireBaseFunc(){
 	});
 	
 	myDataRef.on("child_added", function(snapshot, prevChildKey) {
-
-	var newPost = snapshot.val();
-	console.log("Name: " + newPost.Name);
-	console.log("Title: " + newPost.Email);
-	console.log("Phone: " + newPost.Phone);
-	console.log("School: " + newPost.School);
+	var contact = snapshot.val();
+	console.log("Name: " + contact.Name);
+	console.log("Title: " + contact.Email);
+	console.log("Phone: " + contact.Phone);
+	console.log("School: " + contact.School);
 	console.log("Previous Post ID: " + prevChildKey);
-
 	});
 /* 	myDataRef.on('child_added', function(snapshot) {
 		var contact = snapshot.val();
@@ -47,4 +45,20 @@ function fireBaseFunc(){
          $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight; 
       };
 	 */
+	 
+	 
+/* 	 function httpGet(theUrl) {
+  var xmlHttp = null;
+
+  xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("GET", theUrl, false);
+  xmlHttp.send(null);
+  return xmlHttp.responseText;
+}
+
+
+var url = 'https://glowing-fire-7224.firebaseio.com/FilmFest/';
+var teams = JSON.parse(httpGet(url));
+
+$("#result").text(teams.CAVALRY.division); */
 }
