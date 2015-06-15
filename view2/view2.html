@@ -1,5 +1,40 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+
+<div class="container" id="form1" ng-controller ="View2Ctrl as thisView">
+	<div class="row">
+		<input type='text' id='nameInput' placeholder='Name'></br>
+	</div>
+	<div class="row">
+		<input type='text' id='emailInput' placeholder='email'></br>
+	</div>
+	<div class="row">
+		<input type='text' id='phoneInput' placeholder='phone'></br>
+	</div>
+	<div class="row">
+		<input type='text' id='schoolInput' placeholder='school'></br>
+	</div>
+
+</div>
+
+<div class="container">
+	<div class="row">
+		<p>This is the partial for view 2.</p>
+		<p>
+		  Showing of 'interpolate' filter:
+		  {{ 'Current version is v%VERSION%.' | interpolate }}
+		</p>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+				<div>
+				<ul>
+				  <li ng-repeat="item in thisView.newPost">
+					  Name: {{item.Name}} - Email: {{item.Email}} - Phone: {{item.Phone}} - School: {{item.School}}
+					  <!-- Name: <p ng-bind = "item.name"></p> -->
+				  </li>
+				</ul>
+			</div>
+
+	</div>
+	<div id='messagesDiv'></div>
+</div>
