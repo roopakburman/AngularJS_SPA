@@ -14,7 +14,71 @@ angular.module('myApp.view2', ['ngRoute'])
 function fireBaseFunc(){
 	
 	var myDataRef = new Firebase('https://glowing-fire-7224.firebaseio.com/FilmFest/');
-	$('#schoolInput').keypress(function (e) {
+	
+	$('#submit').click(function(){
+		var usersRef = myDataRef.child("users");
+/* 		if($('nameInput').value ==undefined || $('emailInput').value ==undefined || $('phoneInput').value ==undefined || $('schoolInput').value ==undefined){
+				alert("Please do not leave any fields blank!");
+			}else{ */
+			usersRef.push().set({
+					Name: $('#nameInput').val(),
+					Email: $('#emailInput').val(),
+					Phone: $('#phoneInput').val(),
+					School: $('#schoolInput').val()
+				}, function(error) {
+				if (error) {
+					console.log("Data could not be saved." + error);
+				} else {
+					console.log("Data saved successfully.");
+				}
+				})	
+			/* } */
+		
+	});
+	
+/* 		$('#schoolInput').keypress(function(e){
+		var usersRef = myDataRef.child("users");
+		if(e.keyCode==13){
+			if($('nameInput').value ==null || $('emailInput').value ==null || $('phoneInput').value ==null || $('schoolInput').value ==null){
+				alert("Please do not leave any fields blank!");
+			}else{
+					usersRef.push().set({
+							Name: $('#nameInput').val(),
+							Email: $('#emailInput').val(),
+							Phone: $('#phoneInput').val(),
+							School: $('#schoolInput').val()
+				}, function(error) {
+				if (error) {
+					console.log("Data could not be saved." + error);
+				} else {
+					console.log("Data saved successfully.");
+				}
+				})	
+			}
+			
+ 		 $('#nameInput').val('');
+	  $('#emailInput').val('');
+	  $('#phoneInput').val('');
+	  $('#schoolInput').val(''); 
+	};
+	}); */
+	
+	
+	
+/* 	var ref = new Firebase('https://glowing-fire-7224.firebaseio.com/FilmFest/users/');
+	// Attach an asynchronous callback to read the data at our posts reference
+	ref.on("child_added", function(snapshot) {
+	var newUser = snapshot.val();
+	var uName = newUser.Name;
+	var email = newUser.Email;
+	var phn = newUser.Phone;
+	var schl = newUser.School;
+
+		alert("THis just in - /n" + newUser + "/n" + uName + "/n" + email + "/n" +schl);
+	}); */
+	
+	
+/* 	$('#schoolInput').keypress(function (e) {
 	if (e.keyCode == 13) {
 	  var Name = $('#nameInput').val();
 	  var Email = $('#emailInput').val();
@@ -26,9 +90,9 @@ function fireBaseFunc(){
 	  $('#phoneInput').val('');
 	  $('#schoolInput').val('');
 	}
-	});
+	}); */
 	
-	myDataRef.on("child_added", function(snapshot, prevChildKey) {
+/* 	myDataRef.on("child_added", function(snapshot, prevChildKey) {
 	var contact = snapshot.val();
 	console.log("Name: " + contact.Name);
 	console.log("Title: " + contact.Email);
@@ -36,7 +100,7 @@ function fireBaseFunc(){
 	console.log("School: " + contact.School);
 	console.log("Previous Post ID: " + prevChildKey);
 	});
-/* 	myDataRef.on('child_added', function(snapshot) {
+ *//* 	myDataRef.on('child_added', function(snapshot) {
 		var contact = snapshot.val();
         displayChatMessage(contact.Name, contact.Email, contact.Phone, contact.School);
       });

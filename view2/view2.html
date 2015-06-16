@@ -1,18 +1,30 @@
 
-<div class="container" id="form1" ng-controller ="View2Ctrl as thisView">
+<div class="container" id="form-control" ng-controller ="View2Ctrl as thisView">
 	<div class="row">
-		<input type='text' id='nameInput' placeholder='Name'></br>
+		<input type='text' id='nameInput' ng-model='name' placeholder='Name'>
+		<span class="text-danger" ng-show="!name">Please provide a name!</span>
+		<span class="text-success" ng-hide="!name">Thanks. Successfully validated!</span></br>
 	</div>
 	<div class="row">
-		<input type='text' id='emailInput' placeholder='email'></br>
+		<input type='text' id='emailInput' ng-model='email' placeholder='email'>
+		<span class="text-danger" ng-show="!email">Please provide an email!</span>
+		<span class="text-success" ng-hide="!email">Thanks. Successfully validated!</span></br>
+		</div>
+	<div class="row">
+		<input type='text' id='phoneInput' ng-model='phone' placeholder='phone'>
+		<span class="text-danger" ng-show="!phone">Please provide a phone#!</span>
+		<span class="text-success" ng-hide="!phone">Thanks. Successfully validated!</span></br>
 	</div>
 	<div class="row">
-		<input type='text' id='phoneInput' placeholder='phone'></br>
+		<input type='text' id='schoolInput' ng-model='schl' placeholder='school'>
+		<span class="text-danger" ng-show="!schl">Please provide a School!</span>
+		<span class="text-success" ng-hide="!schl">Thanks. Successfully validated!</span></br>
 	</div>
 	<div class="row">
-		<input type='text' id='schoolInput' placeholder='school'></br>
+		<input type='Button' id='submit' value='submit'></br>
 	</div>
-
+	
+	
 </div>
 
 <div class="container">
@@ -24,16 +36,16 @@
 		</p>
 	</div>
 </div>
-<div class="container" id="result">
+<!-- <div class="container" id="result">
 	<div class="row">
 				ng-repeat should render here.
 				<ul>
 				  <li ng-repeat="item in thisView.objContact">
 					  Name: {{item.Name}} - Email: {{item.Email}} - Phone: {{item.Phone}} - School: {{item.School}}
 					  <!-- Name: <p ng-bind = "item.name"></p> -->
-				  </li>
+<!-- 				  </li>
 				</ul>
-	</div>
+	</div> -->
 
 	<div id='messagesDiv'></div>
-</div>
+</div> 
