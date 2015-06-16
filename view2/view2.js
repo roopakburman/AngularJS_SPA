@@ -35,6 +35,24 @@ function fireBaseFunc(){
 			/* } */
 		
 	});
+	$('#fetch').click(function(){
+		var ref = new Firebase("https://glowing-fire-7224.firebaseio.com/FilmFest/");
+		ref.orderByChild("users").limitToLast(10).on("child_added", function(snapshot) {
+			console.log(snapshot.val());
+		});
+	});
+	
+/* 	var ref = new Firebase('https://glowing-fire-7224.firebaseio.com/FilmFest/users/');
+	// Attach an asynchronous callback to read the data at our posts reference
+	ref.on("child_added", function(snapshot) {
+	var newUser = snapshot.val();
+	var uName = newUser.Name;
+	var email = newUser.Email;
+	var phn = newUser.Phone;
+	var schl = newUser.School;
+
+		alert("THis just in - /n" + newUser + "/n" + uName + "/n" + email + "/n" +schl);
+	}); */
 	
 /* 		$('#schoolInput').keypress(function(e){
 		var usersRef = myDataRef.child("users");
@@ -65,17 +83,7 @@ function fireBaseFunc(){
 	
 	
 	
-/* 	var ref = new Firebase('https://glowing-fire-7224.firebaseio.com/FilmFest/users/');
-	// Attach an asynchronous callback to read the data at our posts reference
-	ref.on("child_added", function(snapshot) {
-	var newUser = snapshot.val();
-	var uName = newUser.Name;
-	var email = newUser.Email;
-	var phn = newUser.Phone;
-	var schl = newUser.School;
 
-		alert("THis just in - /n" + newUser + "/n" + uName + "/n" + email + "/n" +schl);
-	}); */
 	
 	
 /* 	$('#schoolInput').keypress(function (e) {
