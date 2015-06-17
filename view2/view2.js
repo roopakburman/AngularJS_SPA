@@ -44,7 +44,6 @@ angular.module('myApp.view2', ['ngRoute'])
 
 		alert("THis just in - /n" + newUser + "/n" + uName + "/n" + email + "/n" +schl);
 	}); */
-	
 /* 		$('#schoolInput').keypress(function(e){
 		var usersRef = myDataRef.child("users");
 		if(e.keyCode==13){
@@ -71,12 +70,6 @@ angular.module('myApp.view2', ['ngRoute'])
 	  $('#schoolInput').val(''); 
 	};
 	}); */
-	
-	
-	
-
-	
-	
 /* 	$('#schoolInput').keypress(function (e) {
 	if (e.keyCode == 13) {
 	  var Name = $('#nameInput').val();
@@ -90,7 +83,6 @@ angular.module('myApp.view2', ['ngRoute'])
 	  $('#schoolInput').val('');
 	}
 	}); */
-	
 /* 	myDataRef.on("child_added", function(snapshot, prevChildKey) {
 	var contact = snapshot.val();
 	console.log("Name: " + contact.Name);
@@ -108,8 +100,6 @@ angular.module('myApp.view2', ['ngRoute'])
          $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight; 
       };
 	 */
-	 
-	 
 /* 	 function httpGet(theUrl) {
   var xmlHttp = null;
 
