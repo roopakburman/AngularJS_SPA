@@ -23,6 +23,10 @@ angular.module('myApp.view2', ['ngRoute'])
 					Phone: $('#phoneInput').val(),
 					School: $('#schoolInput').val()
 				});	
+			$('#nameInput').val('');
+			$('#emailInput').val('');
+			$('#phoneInput').val('');
+			$('#schoolInput').val('');
 			/* } */
 		
 	};
