@@ -20,8 +20,14 @@
 		<span class="text-danger" ng-show="!schl">Please provide a School!</span>
 		<span class="text-success" ng-hide="!schl">Thanks. Successfully validated!</span></br>
 	</div>
+	<p>&nbsp;</p>
+	<p></p>
+
 	<div class="row">
-		<input class="btn btn-primary" type='Button' id='submit' value='submit' ng-click="save()"></br>
+			<input class="btn btn-primary" type='Button' id='submit' value='submit' ng-click="save()">
+
+			<input class="btn btn-primary" type='Button' id='fetch' value='Fetch Records!' ng-click="fetch()"</br>
+
 	</div>
 	
 	
@@ -29,26 +35,7 @@
 
 <div class="container">
 	<div class="row">
-		<p>This is the partial for view 2.</p>
-		<p>
-		  Showing of 'interpolate' filter:
-		  {{ 'Current version is v%VERSION%.' | interpolate }}
-		</p>
-	</div>
-</div>
-<!-- <div class="container" id="result">
-	<div class="row">
-				ng-repeat should render here.
-				<ul>
-				  <li ng-repeat="item in thisView.objContact">
-					  Name: {{item.Name}} - Email: {{item.Email}} - Phone: {{item.Phone}} - School: {{item.School}}
-					  <!-- Name: <p ng-bind = "item.name"></p> -->
-<!-- 				  </li>
-				</ul>
-	</div> -->
-<div class="container">
-	<div class="row">
-		<input class="btn btn-primary" type='Button' id='fetch' value='Fetch Records!' ng-click="fetch()"</br>
+		
 	</div>
 </div>
 	<div id='messagesDiv'></div>
