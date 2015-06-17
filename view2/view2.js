@@ -9,35 +9,26 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', fireBaseFunc);
-
-function fireBaseFunc(){
-	
+.controller('View2Ctrl', function ($scope) {
 	var myDataRef = new Firebase('https://glowing-fire-7224.firebaseio.com/FilmFest/');
 	
-	$('#submit').click(function(){
+	$scope.save = function(){
 		var usersRef = myDataRef.child("users");
 /* 		if($('nameInput').value ==undefined || $('emailInput').value ==undefined || $('phoneInput').value ==undefined || $('schoolInput').value ==undefined){
 				alert("Please do not leave any fields blank!");
 			}else{ */
-			usersRef.push().set({
+			usersRef.push({
 					Name: $('#nameInput').val(),
 					Email: $('#emailInput').val(),
 					Phone: $('#phoneInput').val(),
 					School: $('#schoolInput').val()
-				}, function(error) {
-				if (error) {
-					console.log("Data could not be saved." + error);
-				} else {
-					console.log("Data saved successfully.");
-				}
-				})	
+				});	
 			/* } */
 		
-	});
+	};
 	$('#fetch').click(function(){
 		var ref = new Firebase("https://glowing-fire-7224.firebaseio.com/FilmFest/");
-		ref.orderByChild("users").limitToLast(10).on("child_added", function(snapshot) {
+		ref.orderByChild("Name").limitToLast(10).on("child_added", function(snapshot) {
 			console.log(snapshot.val());
 		});
 	});
@@ -133,4 +124,4 @@ var url = 'https://glowing-fire-7224.firebaseio.com/FilmFest/';
 var teams = JSON.parse(httpGet(url));
 
 $("#result").text(teams.CAVALRY.division); */
-}
+});
