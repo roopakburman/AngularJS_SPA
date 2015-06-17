@@ -30,12 +30,12 @@ angular.module('myApp.view2', ['ngRoute'])
 			/* } */
 		
 	};
-	$('#fetch').click(function(){
+	$scope.fetch = function(){
 		var ref = new Firebase("https://glowing-fire-7224.firebaseio.com/FilmFest/");
 		ref.orderByChild("Name").limitToLast(10).on("child_added", function(snapshot) {
 			console.log(snapshot.val());
 		});
-	});
+	}
 	
 /* 	var ref = new Firebase('https://glowing-fire-7224.firebaseio.com/FilmFest/users/');
 	// Attach an asynchronous callback to read the data at our posts reference
