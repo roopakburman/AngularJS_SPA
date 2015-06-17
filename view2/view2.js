@@ -28,7 +28,6 @@ angular.module('myApp.view2', ['ngRoute'])
 			$('#phoneInput').val('');
 			$('#schoolInput').val('');
 			/* } */
-		
 	};
 	$scope.fetch = function(){
 		var ref = new Firebase("https://glowing-fire-7224.firebaseio.com/FilmFest/");
