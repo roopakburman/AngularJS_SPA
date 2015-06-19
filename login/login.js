@@ -56,10 +56,10 @@ $scope.login = function(){
 		} else {
 		console.log("Authenticated successfully with payload:", authData);
 			 if(authData.password.email =='r@test.com'){
-/* 				window.location.href = '/app/#/view1/';}
-			 else{window.location.href = '/app/#/view2/';}  */
-			 window.location.href = '/app/angularjs_spa/#/view1/';}
-			 else{window.location.href = '/app/angularjs_spa/#/view2/';}
+				window.location.href = '/app/#/view1/';}
+			 else{window.location.href = '/app/#/view2/';} 
+/* 			 window.location.href = '/app/angularjs_spa/#/view1/';}
+			 else{window.location.href = '/app/angularjs_spa/#/view2/';} */
 		}
 		},{
 			remember: "sessiononly"
